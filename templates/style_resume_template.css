@@ -1,0 +1,202 @@
+/* ===----------------------------------------------=== */
+
+:root {
+  --border-color: hsl(210, 7%, 91%);
+  --bg-secondary: hsl(225, 6%, 14%);
+
+  --text-primary: hsl(0deg 0% 10.59%);
+  --text-secondary: hsl(0deg 0% 10% / 64%);
+  --text-secondary: hsl(200 5% 44%);
+  --text-secondary: hsl(193.33deg 5.39% 32.75%);
+
+  --bg-primary: hsl(190.91deg 33.33% 97.02%);
+  --bg-tertiary: hsl(210deg 4.76% 91%);
+
+  --link-primary: hsl(217.32deg 89.13% 18.04%);
+  --link-visited: hsl(214.08deg 81.75% 49.41%);
+
+  --bg-section-full: hsl(0deg 0% 89.41%);
+
+  --hr-color: hsl(160deg 2.16% 82.75%);
+  --accent: hsl(20, 5.36%, 50%);
+  --border-accent: hsl(15, 5.88%, 73.33%);
+  --dim: hsl(0, 0%, 18.90%);
+
+   --font-serif: 'Athelas', 'Bell MT', 'Book Antiqua', 'Californian FB', 'Calisto MT', 'Century Schoolbook', 'Garamond', 'Goudy Old Style', 'Hoefler Text', 'Iowan Old Style', 'Palatino', 'High Tower Text', 'Liberation Serif', 'Noto Serif', serif;
+   --font-sans-serif: 'Avenir', 'Franklin Gothic Book', 'Gill Sans', 'Gill Sans MT', 'Helvetica', 'Helvetica Neue', 'Optima', 'Seravek', 'Sitka', 'Calibri', 'Futura', 'Perpetua', 'Segoe UI', 'Tw Cen MT', sans-serif;
+   --font-monospace: Fira Code VF, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+}
+
+*,
+:after,
+:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  line-height: 1.45rem;
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
+  font-family: var(--font-sans-serif);
+  font-feature-settings: "kern";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-variation-settings: normal;
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 650px;
+  max-width: max(66ch, calc(min(650px, 72ch)));
+  margin: 0 auto;
+  padding: 0 10px;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+[hidden] { display: none; }
+
+html {
+  height: 100%;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11"
+}
+
+body {
+  min-height: 100%
+}
+
+section {
+  padding-block-end: 2em;
+}
+
+h1 {
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+h2 {
+  color: var(--text-primary);
+  font-size: 1.375rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+h4 { font-weight: 700; font-size: 0.875rem; }
+
+p {
+  hyphens: auto;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  /*white-space: pre-wrap;*/
+  /*word-break: break-word;*/
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.15em;
+  transition-property: background;
+  -webkit-tap-highlight-color: hsl(0deg 0% 100% / 10%);
+  transition-duration: 0.2s;
+  /*  text-decoration: none;*/
+}
+
+menu,
+ol,
+ul {
+  padding-inline: 2rem;
+}
+
+li::marker {
+  color: var(--bg-tertiary);
+}
+
+input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
+
+[role=button], button { cursor: pointer; }
+
+:disabled { cursor: default; }
+
+a:is(:link, :visited, :hover, :target, :focus, :focus-within, .focus-visible).disabled, a.disabled, .disabled a {
+    color: var(--dim);
+    opacity: 0.6;
+    pointer-events: none;
+    cursor: not-allowed;
+    user-select: none;
+}
+
+audio,
+canvas,
+embed,
+iframe,
+img,
+object,
+svg,
+video {
+  display: block;
+  vertical-align: middle
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+ul li {
+  list-style-type: "λ𝑥. ";
+}
+
+ul li::marker {
+  color: var(--dim);
+  color: var(--text-secondary);
+  color: var(--text-primary);
+}
+
+.font-mono {
+  font-variant-ligatures: none;
+  font-family: var(--font-monospace);
+  font-size: 1em
+}
+
+.flex {
+  display: flex
+}
+
+/* !`--flow-spacer` is an anonymous scoped variable.
+   Declare it wherever `.flow` is used. */
+:where(.flow)>*+* {
+    --_fallback: 1em;
+    margin-top: var(--flow-spacer, var(--_fallback));
+    margin-block-start: var(--flow-spacer, var(--_fallback));
+}
