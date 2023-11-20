@@ -1,0 +1,36 @@
+name: John Doe
+contact:
+  email: johndoe@example.com
+  phone: +1234567890
+summary: >-
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam finibus, quam eu luctus semper, velit lacus molestie tortor, a faucibus enim eros id ligula.
+skills:
+  - TypeScript
+  - Python
+  - HTML
+  - CSS
+  - JavaScript
+  - C
+  - Rust
+experience:
+  - company: Google
+    title: Software Engineer
+    dates: 2015-2020
+    responsibilities:
+      - Developed web applications using JavaScript and React.
+      - Collaborated with cross-functional teams to deliver projects on time.
+  - company: Facebook
+    title: Data Scientist
+    dates: 2020-Present
+    responsibilities:
+      - Developed web applications using JavaScript and React.
+      - Collaborated with cross-functional teams to deliver projects on time.
+education:
+  - institution: Stanford University
+    degree: Bachelor of Science
+    major: Computer Science
+    dates: 2011-2015
+  - institution: MIT
+    degree: Master of Science
+    major: Computer Science
+    dates: 2015-2017

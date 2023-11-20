@@ -1,0 +1,4 @@
+Job Tiitle,Company,Website,Connections,Activity Log,Must Have 1,Must Have 2,Must Have 3,Nice To Have 1,Nice To Have 2,Nice To Have 3,Nice To Have 4,Nice To Have 5,
+Job 1,Company A,www.companyA.com,John (LinkedIn),Sent resume on 2023/10/10,TRUE,TRUE,FALSE,5,4,3,2,1,
+Job 2,Company B,www.companyB.com,Jane (Referal),Followed up on 2023/10/10,TRUE,FALSE,TRUE,3,2,5,4,2,
+Job 3,Company C,www.companyC.com,N.A.,Applied online on 2023/10/10,FALSE,TRUE,TRUE,4,3,5,1,3,
