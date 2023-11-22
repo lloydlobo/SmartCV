@@ -47,7 +47,6 @@ def generate_resume(yaml_file, template_file, output_pdf):
     # --------------------------------------------------------------------------
     # Render the template with YAML data
     rendered_resume = template.render(data=data)
-    print(rendered_resume)
     return rendered_resume
 
     # --------------------------------------------------------------------------

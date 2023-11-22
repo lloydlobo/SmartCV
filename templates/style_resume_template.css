@@ -9,6 +9,7 @@
   --text-secondary: hsl(0deg 0% 10% / 64%);
   --text-secondary: hsl(200 5% 44%);
   --text-secondary: hsl(193.33deg 5.39% 32.75%);
+  --text-neutral-900: hsl(0deg 0% 0%);
 
   --bg-primary: hsl(190.91deg 33.33% 97.02%);
   --bg-tertiary: hsl(210deg 4.76% 91%);
@@ -119,22 +120,29 @@ h2 {
   font-size: 1.15rem;
   font-size: 1rem;
   font-weight: 400;
+  margin-block-start: 1.125em;
 }
 
 h3 {
-  font-size: 1.125rem;
-  font-size: 0.95rem;
-  font-weight: 400;
+  font-size: 0.85rem;
+  /* body font size 13px */
+  font-size: 1em; 
+  font-size: 95%; 
+  font-weight: 600;
+  /*  color: var(--text-neutral-900);*/
 }
 
-h4 { font-weight: 700; 
+h3 a {
+  text-decoration: none;
+}
 
+h4 { 
   font-weight: lighter;
-
-  font-size: 0.875rem; }
+  font-size: 0.875rem; 
+}
 
 p {
-  hyphens: auto;
+  /*  hyphens: auto;*/
   margin: 0;
   padding: 0;
 }
@@ -170,11 +178,11 @@ input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
 :disabled { cursor: default; }
 
 a:is(:link, :visited, :hover, :target, :focus, :focus-within, .focus-visible).disabled, a.disabled, .disabled a {
-    color: var(--dim);
-    opacity: 0.6;
-    pointer-events: none;
-    cursor: not-allowed;
-    user-select: none;
+  color: var(--dim);
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed;
+  user-select: none;
 }
 
 audio,
@@ -219,28 +227,28 @@ ul li::marker {
 
 /* !`--flow-spacer` is an anonymous scoped variable.
    Declare it wherever `.flow` is used. */
-:where(.flow)>*+* {
+   :where(.flow)>*+* {
     --_fallback: 1em;
     --_fallback: .5em;
     margin-top: var(--flow-spacer, var(--_fallback));
     margin-block-start: var(--flow-spacer, var(--_fallback));
-}
+  }
 
 /* -------------------------------------------------------------------------- */
 
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    margin-inline: auto;
-    max-width: 800px;
-    max-width: 750px;
-    margin: 20px auto;
-    padding: 0 20px;
-    background-color: #fff;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-    max-height: 100vh;
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  margin-inline: auto;
+  max-width: 800px;
+  max-width: 750px;
+  margin: 0px auto;
+  padding: 0 20px;
+  background-color: #fff;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 article {
@@ -257,16 +265,16 @@ h1, h2 {
 */
 
 span {
-    color: #555;
+  color: #555;
 }
 
 hr {
-    border: 0.5px solid #ddd;
+  border: 0.5px solid #ddd;
 }
 
 p {
-    line-height: 1.6;
-    line-height: 1.45;
+  line-height: 1.6;
+  line-height: 1.45;
 }
 
 /*
@@ -283,19 +291,38 @@ li {
 */
 
 .flex {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .flex strong {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 /* Add more specific styling as needed */
+
+
+.hero-summary {
+  margin-block-start: .5em;
+}
 
 .contact {
   gap: .5em;
   margin-inline: auto;
   width: 100%;
   place-content: center;
+  font-size: 90%;
+}
+
+.experience-item {
+  justify-content: space-between;
+}
+
+.skill-category {
+  line-height: 1.45;
+  font-size: 80%;
+  font-weight: 600;
+  margin-inline-end: 2ch;
+  min-width: 10ch;
 }
