@@ -10,25 +10,24 @@
     <meta name="title" content="{{ data.name }}">
     <title>{{ data.name }}</title>
     <link rel="stylesheet" href="style_resume_template.css" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700;800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
 <article class="flow">
     <h1>{{ data.name }}</h1>
-    <span>{{ data.contact.email }}</span>
-    &nbsp;
-    <span>{{ data.contact.phone }}</span>
+    <div class="contact flex">
+        <span>{{ data.contact.email }}</span>
+        <span>|</span>
+        <span>{{ data.contact.phone }}</span>
+        <span>|</span>
+        <span>{{ data.contact.address }}</span>
+    </div>
     <hr>
     <p>{{ data.summary }}</p>
-
-    <h2>Education</h2>
-    <ul>
-        {% for edu in data.education %}
-        <li>{{ edu.degree }} in {{ edu.major }},
-            {{ edu.institution }} ({{ edu.dates }})
-        </li>
-        {% endfor %}
-    </ul>
 
     <h2>Experience</h2>
     <ul>
@@ -41,6 +40,38 @@
                 <li>{{ resp }}</li>
                 {% endfor %}
             </ul>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Skills</h2>
+    <div class="flex">
+        <strong>Languages:&nbsp;</strong>
+        {% for skill in data.skills %}
+        <span>{{ skill }}&nbsp;</span>
+        {% endfor %}
+    </div>
+
+    <h2>Projects</h2>
+    <ul>
+        {% for exp in data.experience %}
+        <li>
+            <strong>{{ exp.title }}</strong> at {{ exp.company }}, {{ exp.dates
+            }}
+            <ul>
+                {% for resp in exp.responsibilities %}
+                <li>{{ resp }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Education</h2>
+    <ul>
+        {% for edu in data.education %}
+        <li>{{ edu.degree }} in {{ edu.major }},
+            {{ edu.institution }} ({{ edu.dates }})
         </li>
         {% endfor %}
     </ul>

@@ -1,7 +1,8 @@
 name: John Doe
 contact:
   email: johndoe@example.com
-  phone: +1234567890
+  phone: (+123)-456-7890
+  address: Penny Lane
 summary: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam finibus, quam eu luctus semper, velit lacus molestie tortor, a faucibus enim eros id ligula.
 skills:
