@@ -1,37 +1,62 @@
-name: John Doe
+name: Jane Smith
 contact:
-  email: johndoe@example.com
-  phone: (+123)-456-7890
-  address: Penny Lane
+  email: janesmith@example.com
+  phone: (+987)-654-3210
+  address: Abbey Road
 summary: >-
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam finibus, quam eu luctus semper, velit lacus molestie tortor, a faucibus enim eros id ligula.
-skills:
-  - TypeScript
-  - Python
-  - HTML
-  - CSS
-  - JavaScript
-  - C
-  - Rust
+  I enjoy creating meaningful programs and collaborating for quality results. 
+  Eager to contribute my skills to an integrity-driven software environment.
 experience:
-  - company: Google
-    title: Software Engineer
-    dates: 2015-2020
+  - company: Amazon
+    title: Data Engineer
+    dates: 2021-Present
     responsibilities:
-      - Developed web applications using JavaScript and React.
-      - Collaborated with cross-functional teams to deliver projects on time.
-  - company: Facebook
-    title: Data Scientist
-    dates: 2020-Present
+      - Implemented data processing pipelines using Python and Spark.
+      - Collaborated with diverse teams for successful project delivery.
+  - company: Microsoft
+    title: Software Developer
+    dates: 2016-2021
     responsibilities:
-      - Developed web applications using JavaScript and React.
-      - Collaborated with cross-functional teams to deliver projects on time.
+      - Built web applications using TypeScript and Angular.
+      - Collaborated with cross-functional teams to meet project deadlines.
+  - company: Apple
+    title: iOS Developer
+    dates: 2014-2016
+    responsibilities:
+      - Developed user-friendly iOS applications using Swift.
+      - Collaborated with UX/UI designers to enhance app visuals.
+projects:
+  - name: Exciting travel app
+    description: Explore new places while checking real-time weather details.
+    url: https://gitsample.com/exciting-travel-app  
+  - name: Innovative finance app
+    description: Manage your finances with ease using this cutting-edge app.
+    url: https://gitsample.com/innovative-finance-app  
+  - name: Futuristic health app
+    description: Stay fit and healthy with personalized health insights.
+    url: https://gitsample.com/futuristic-health-app  
+skills:
+  - languages:
+    - TypeScript
+    - Python
+    - HTML
+    - CSS
+    - JavaScript
+    - Java
+    - Kotlin
+  - traits:
+    - Problem Solver
+    - Team Player
+    - Innovative Thinker
+  - talents:
+    - User Experience Design
+    - Agile Development
 education:
-  - institution: Stanford University
+  - institution: Harvard University
     degree: Bachelor of Science
     major: Computer Science
-    dates: 2011-2015
-  - institution: MIT
+    dates: 2012-2016
+  - institution: Stanford University
     degree: Master of Science
     major: Computer Science
-    dates: 2015-2017
+    dates: 2016-2018
