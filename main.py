@@ -18,12 +18,12 @@ with open(YAML_FILE_PATH, "r") as base_data_file:
     yaml_data = yaml.safe_load(base_data_file)
 yaml_output = yaml.dump(yaml_data, default_flow_style=False, sort_keys=False)
 
-
 # ------------------------------------------------------------------------------
 
 
 class SmartCV:
     """ """
+
     def __init__(self, name):
         self.name = name
 
@@ -71,15 +71,13 @@ def main():
     dir_root = os.path.dirname(os.path.dirname(__file__))
     template_file = os.path.join(dir_root, "resume_template.html")
 
-    html_resume = generate_resume(
-        ".SmartCV.data.yml", template_file, "output_resume.pdf"
-    )
+    html_resume = generate_resume(".SmartCV.data.yml", template_file,
+                                  "output_resume.pdf")
 
     # dir_build = os.path.join(dir_root, "build")
     os.makedirs("build", exist_ok=True)
-    with open(
-        os.path.join("build", "resume.html"), "w", encoding="utf-8"
-    ) as html_output_file:
+    with open(os.path.join("build", "resume.html"), "w",
+              encoding="utf-8") as html_output_file:
         print(html_resume)
         html_output_file.write(html_resume)
         shutil.copy(
