@@ -36,7 +36,7 @@ class SmartCV:
 def generate_resume(yaml_file, template_file, output_pdf):
     # --------------------------------------------------------------------------
     # Load YAML data
-    with open(yaml_file, 'r') as file:
+    with open(yaml_file, 'r', encoding='utf-8') as file:
         data = yaml.safe_load(file)
 
     # --------------------------------------------------------------------------
