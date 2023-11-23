@@ -22,10 +22,12 @@ yaml_output = yaml.dump(yaml_data, default_flow_style=False, sort_keys=False)
 
 
 class SmartCV:
+    """ """
     def __init__(self, name):
         self.name = name
 
     def generate_resume(self):
+        """ """
         resume = []
         resume.append(f"Name: {self.name}")
 
@@ -36,6 +38,13 @@ class SmartCV:
 
 
 def generate_resume(yaml_file, template_file, output_pdf):
+    """
+
+    :param yaml_file: 
+    :param template_file: 
+    :param output_pdf: 
+
+    """
     # --------------------------------------------------------------------------
     # Load YAML data
     with open(yaml_file, "r", encoding="utf-8") as file:
@@ -57,6 +66,7 @@ def generate_resume(yaml_file, template_file, output_pdf):
 
 
 def main():
+    """ """
     dir_root = os.path.dirname(os.path.dirname(__file__))
     template_file = os.path.join(dir_root, "resume_template.html")
 
