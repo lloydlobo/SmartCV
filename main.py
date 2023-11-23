@@ -3,7 +3,8 @@ import shutil
 import sys
 
 import yaml
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment
+from jinja2 import FileSystemLoader
 
 YAML_FILE_PATH = ".SmartCV.data.yml"
 template_dir, template_file = "templates", "resume_template.html"
