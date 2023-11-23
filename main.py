@@ -41,9 +41,9 @@ class SmartCV:
 def generate_resume(yaml_file, template_file, output_pdf):
     """
 
-    :param yaml_file: 
-    :param template_file: 
-    :param output_pdf: 
+    :param yaml_file:
+    :param template_file:
+    :param output_pdf:
 
     """
     # --------------------------------------------------------------------------

@@ -24,7 +24,7 @@ contact:
   address: Abbey Road
   website: https://example.com
 summary: >-
-  I enjoy creating meaningful programs and collaborating for quality results. 
+  I enjoy creating meaningful programs and collaborating for quality results.
   Eager to contribute my skills to an integrity-driven software environment.
 experience:
   - company: Amazon
