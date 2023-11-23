@@ -10,7 +10,7 @@ Craft personalized resumes with `SmartCV` using `CSS` precision and on-the-fly
 - Ability to edit and style as one pleases. (Just the basics of `HTML` and `CSS`
   are required.)
 - Edit resume in any text-editor and watch changes in the browser.
-    - [ ] TODO: Add hot-reloading for the `python` compilation script.
+  - [ ] TODO: Add hot-reloading for the `python` compilation script.
 
 ## Sample Preview
 
