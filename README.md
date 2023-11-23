@@ -87,4 +87,4 @@ education:
 
 ### Output Resume
 
-![Sample Resume](public/docs/sample-resume_SmartCV_2023-11-23.png)
+![Sample Resume](public/docs/sample-resume_SmartCV_2023-11-23.gif)
