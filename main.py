@@ -1,6 +1,6 @@
 import os
-import sys
 import shutil
+import sys
 
 import yaml
 from jinja2 import Environment, FileSystemLoader
