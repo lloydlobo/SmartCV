@@ -4,11 +4,9 @@
   --border-color: hsl(210, 7%, 91%);
   --bg-secondary: hsl(225, 6%, 14%);
 
-  --text-primary: hsl(0deg 0% 10.59%);
   --text-primary: hsl(0deg 0% 25.1%);
-  --text-secondary: hsl(0deg 0% 10% / 64%);
-  --text-secondary: hsl(200 5% 44%);
   --text-secondary: hsl(193.33deg 5.39% 32.75%);
+  --text-tertiary: hsl(200 5% 65%);
   --text-neutral-900: hsl(0deg 0% 0%);
 
   --bg-primary: hsl(190.91deg 33.33% 97.02%);
@@ -56,7 +54,7 @@ body {
   max-width: max(66ch, calc(min(650px, 72ch)));
   margin: 0 auto;
   /* padding: 0 10px; */
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 400;
   font-family: var(--font-sans-serif);
   letter-spacing: normal;
@@ -110,26 +108,22 @@ section {
 
 h1 {
   color: var(--text-primary);
+  /* color: var(--text-neutral-900); */
   font-size: 3rem;
   font-weight: lighter;
   text-align: center;
 }
 
 h2 {
-  color: var(--text-primary);
-  font-size: 1.15rem;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 400;
-  margin-block-start: 1.125em;
+  margin-block-end: 0.15em;
 }
 
 h3 {
-  font-size: 0.85rem;
-  /* body font size 13px */
-  font-size: 1em; 
-  font-size: 95%; 
+  color: var(--text-primary);
+  font-size: 85%;
   font-weight: 600;
-  /*  color: var(--text-neutral-900);*/
 }
 
 h3 a {
@@ -167,9 +161,6 @@ ul {
   padding-inline: 2rem;
 }
 
-li::marker {
-  color: var(--bg-tertiary);
-}
 
 input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; }
 
@@ -209,10 +200,14 @@ ul li {
   */
 }
 
+li {
+    margin-block-end: .1em;
+    padding-inline-start: 1ch;
+}
+
 ul li::marker {
-  color: var(--dim);
-  color: var(--text-secondary);
-  color: var(--text-primary);
+    font-size: .7rem;
+    color: var(--text-tertiary);
 }
 
 .font-mono {
@@ -247,22 +242,15 @@ body {
   padding: 0 20px;
   background-color: #fff;
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-  max-height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 article {
-/*
-    max-width: 800px;
-    margin: 40px auto;
-  */
+    display: flex;
+    flex-direction: column;
+    gap: .85em;
 }
-
-/*
-h1, h2 {
-    color: #007bff;
-}
-*/
 
 span {
   color: #555;
@@ -319,6 +307,10 @@ li {
   justify-content: space-between;
 }
 
+.experience-item.flex h3 {
+  line-height: normal;
+}
+
 .skill-category {
   line-height: 1.45;
   font-size: 80%;
@@ -326,3 +318,8 @@ li {
   margin-inline-end: 2ch;
   min-width: 10ch;
 }
+
+li, p, span {
+ font-size: .85rem;
+}
+
