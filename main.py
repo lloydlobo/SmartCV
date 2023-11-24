@@ -1,12 +1,17 @@
-from os import path, makedirs
+from os import makedirs
+from os import path
 from shutil import copy
 from sys import exit
 
-from jinja2 import Environment, FileSystemLoader, Template
+from jinja2 import Environment
+from jinja2 import FileSystemLoader
+from jinja2 import Template
 from yaml import safe_load
 
 
 class SmartCVConfig:
+    """ """
+
     def __init__(self, dir_root):
         # Directory path where the script was executed.
         self.dir_root = dir_root
@@ -31,6 +36,11 @@ class SmartCVConfig:
 
 
 def generate_cv(config: SmartCVConfig) -> str:
+    """
+
+    :param config: SmartCVConfig:
+
+    """
     # ----------------------------------------------------------------------
     # Load YAML data.
     with open(file=config.input_yaml, mode="r", encoding="utf-8") as file:
@@ -51,6 +61,7 @@ def generate_cv(config: SmartCVConfig) -> str:
 
 
 def main() -> int:
+    """ """
     # ----------------------------------------------------------------------
     # Initialize configuration data class.
     config = SmartCVConfig(dir_root=path.dirname(path.dirname(__file__)))
@@ -64,7 +75,10 @@ def main() -> int:
     makedirs(config.build_dir, exist_ok=True)  # Ensure build directory exists.
     with open(config.path_dst_cv_html, "w", encoding="utf-8") as dst_html_file:
         dst_html_file.write(html_cv)
-        copy(src=config.path_src_css_file, dst=config.path_dst_css_file, )
+        copy(
+            src=config.path_src_css_file,
+            dst=config.path_dst_css_file,
+        )
 
     return 0  # STATUS_OK.
 
