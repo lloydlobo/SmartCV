@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="title" content="{{ data.name }}">
+    <title>{{ data.name }}</title>
+    <link rel="stylesheet" href="style_cv_template.css" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;900&family=Poppins:wght@100;300;400;500;600;700;900&display=swap"
+          rel="stylesheet"
+    >
+</head>
+
+<body>
+<main>
+    <article class="cv-article">
+        <header class="flow">
+            <h1>{{ data.name }}</h1>
+            <address class="contact flex">
+                <a href="mailto:{{ data.contact.email }}">{{ data.contact.email
+                    }}</a>
+                <!--TODO: Avoid this being read by screenreaders-->
+                <span aria-hidden="true"> · </span>
+                <!--                <a href="tel:{{ data.contact.phone }}">{{ data.contact.phone }}</a>-->
+                <!--                <span aria-hidden="true"> · </span>-->
+                <span>{{ data.contact.address }}</span>
+                <span aria-hidden="true"> · </span>
+                <a href="{{ data.contact.website }}">{{ data.contact.website
+                    }}</a>
+            </address>
+        </header>
+        <!--            <hr>-->
+        <p class="hero-summary" aria-label="High-level summary">{{ data.summary }}</p>
+
+        <section>
+            <h2>Experience</h2>
+            <div class="flow">
+                {% for exp in data.experience %}
+                <article>
+                    <div class="experience-item flex">
+                        <h3>{{ exp.company }} <span aria-hidden="true"
+                        > · </span> {{ exp.title }}
+                        </h3>
+                        <!--   Use semantic <time>. Abstract dates to start and end date in yaml config file -->
+                        <span>{{ exp.dates }}</span>
+                    </div>
+                    <ul>
+                        {% for resp in exp.responsibilities %}
+                        <li>{{ resp }}</li>
+                        {% endfor %}
+                    </ul>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <div class="flow">
+                {% for proj in data.projects %}
+                <article>
+                    <h3><a href="{{ proj.url }}">{{ proj.name }}</a></h3>
+                    <p>{{ proj.description }}</p>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section>
+            <h2>Skills</h2>
+            <div class="flex">
+                <h3 class="skill-category">Languages</h3>
+                {% for skill in data.skills %}
+                {% for skill_lang in skill.languages %}
+                <span>{{ skill_lang }}<span aria-hidden="true"
+                >&nbsp;·&nbsp;</span></span>
+                {% endfor %}
+                {% endfor %}
+            </div>
+            <div class="flex">
+                <h3 class="skill-category">Traits</h3>
+                {% for skill in data.skills %}
+                {% for skill_trait in skill.traits %}
+                <span>{{ skill_trait }}<span aria-hidden="true"
+                >&nbsp;·&nbsp;</span></span>
+                {% endfor %}
+                {% endfor %}
+            </div>
+            <div class="flex">
+                <h3 class="skill-category">Talents</h3>
+                {% for skill in data.skills %}
+                {% for skill_talent in skill.talents %}
+                <span>{{ skill_talent }}<span aria-hidden="true"
+                >&nbsp;·&nbsp;</span></span>
+                {% endfor %}
+                {% endfor %}
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div class="flow">
+                {% for edu in data.education %}
+                <div class="experience-item flex">
+                    <h3 class="flex">
+                        {{ edu.institution }}
+                        <span aria-hidden="true">&nbsp;·&nbsp;</span>
+                        {{ edu.degree }} in {{ edu.major }}
+                    </h3>
+                    <span>{{ edu.dates }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </article>
+</main>
+</body>
+
+</html>

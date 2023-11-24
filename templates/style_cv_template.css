@@ -1,0 +1,249 @@
+/* Variables */
+:root {
+	--text-primary: hsl(0deg 0% 25.1%);
+	--text-secondary: hsl(193.33deg 5.39% 32.75%);
+	--text-tertiary: hsl(200 5% 65%);
+	--text-neutral-900: hsl(0deg 0% 0%);
+	--bg-primary: hsl(0deg 0% 100%);
+	--bg-secondary: hsl(225, 6%, 14%);
+	--bg-tertiary: hsl(210deg 4.76% 91%);
+	--link-primary: hsl(217.32deg 89.13% 18.04%);
+	--link-visited: hsl(214.08deg 81.75% 49.41%);
+	--border-color: hsl(210, 7%, 91%);
+	--border-accent: hsl(15, 5.88%, 73.33%);
+	--hr-color: hsl(160deg 2.16% 82.75%);
+	--accent: hsl(20, 5.36%, 50%);
+	--dim: hsl(0, 0%, 18.90%);
+	--font-serif: 'Merriweather', 'Georgia', 'Athelas', 'Avenir', 'Bell MT', 'Book Antiqua', 'Californian FB', 'Calisto MT', 'Century Schoolbook', 'Garamond', 'Goudy Old Style', 'Hoefler Text', 'Iowan Old Style', 'Palatino', 'High Tower Text', 'Liberation Serif', 'Noto Serif', serif;
+	--font-sans-serif: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Franklin Gothic Book', 'Gill Sans', 'Gill Sans MT', 'Optima', 'Seravek', 'Sitka', 'Calibri', 'Futura', 'Perpetua', 'Segoe UI', 'Tw Cen MT', sans-serif;
+	--font-monospace: 'Fira Code', 'Fira Code VF', ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+	--font-sans-serif-heading: 'Calibri', 'Gill Sans', 'Gill Sans MT', 'Futura', 'Perpetua', 'Segoe UI', 'Tw Cen MT', sans-serif;
+}
+
+/* Reset */
+*,
+:after,
+:before {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* HTML */
+html {
+	height: 100%;
+	font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+	-webkit-text-size-adjust: 100%;
+	font-feature-settings: "kern";
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: subpixel-antialiased;
+	font-variation-settings: normal;
+	line-height: 1.45;
+	tab-size: 4;
+	scroll-behavior: smooth;
+	font-family: var(--font-sans-serif);
+}
+
+/* Body */
+body {
+	min-height: 100%;
+	max-width: max(66ch, calc(min(650px, 72ch)));
+margin: 0 auto;
+	font-size: 16px;
+	font-weight: 400;
+	letter-spacing: normal;
+	color: var(--text-primary);
+	background-color: var(--bg-primary);
+	font-family: var(--font-sans-serif);
+	font-family: 'Poppins', sans-serif;
+	display: flex;
+	margin-inline: auto;
+	max-width: 800px;
+	max-width: 750px;
+	margin: 0 auto;
+	padding: 0 20px;
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: inherit;
+	font-family: var(--font-sans-serif-heading);
+	font-family: 'Montserrat', sans-serif;
+}
+
+/* Heading Styles */
+h1 {
+	line-height: 1;
+	color: var(--text-primary);
+	font-size: 3rem;
+	font-weight: lighter;
+	text-align: center;
+}
+
+h2,
+h3 {
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-size: 1.25rem;
+	font-weight: 400;
+	margin-block-end: 0.15em;
+	border:0;
+	border-block-end: 1px solid var(--hr-color);
+    border-block-end-style: dashed;
+}
+
+h3 {
+	color: var(--text-primary);
+	font-size: 85%;
+	font-weight: 600;
+}
+
+h3 a {
+	text-decoration: none;
+}
+
+/* Paragraph Styles */
+p {
+	margin: 0;
+	padding: 0;
+	max-width: 72ch;
+}
+
+/* Link Styles */
+a {
+	color: inherit;
+	text-underline-offset: 0.15em;
+	transition-property: background;
+	-webkit-tap-highlight-color: hsl(0deg 0% 100% / 10%);
+	transition-duration: 0.2s;
+	text-decoration: none;
+}
+
+a:is(:hover,:focus,:target) {
+	text-decoration: underline;
+}
+
+/* Lists Styles */
+menu,
+ol,
+ul {
+	padding-inline: 2rem;
+}
+
+li {
+	margin-block-end: .1em;
+	padding-inline-start: 1ch;
+}
+
+li::marker {
+	font-size: .7rem;
+	color: var(--text-tertiary);
+}
+
+/* Additional Styles */
+li,
+p,
+a,
+span {
+	font-size: .85rem;
+}
+
+address {
+    font-style: normal;
+}
+
+
+span {
+	color: #555;
+}
+
+hr {
+	border: 0.5px solid var(--hr-color);
+}
+
+/* Utilities */
+.flex {
+	display: flex;
+}
+
+/* Flow Spacer */
+:where(.flow)>*+* {
+	--_fallback: .5em;
+	margin-top: var(--flow-spacer, var(--_fallback));
+	margin-block-start: var(--flow-spacer, var(--_fallback));
+}
+
+/* Hidden */
+[hidden] {
+	display: none
+}
+
+/* Flex Container */
+.flex {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+/**
+ Custom Styles
+ */
+
+ header:has(h1) {
+    border-block-end: .5px solid var(--hr-color);
+    padding-block-end: .5em;
+ }
+
+.hero-summary {
+    /* Push up via Override flex col gap of <article class="cv-article"> */
+	margin-block-start: -0.5em;
+}
+
+/* Article Styles */
+.cv-article {
+	padding: 1rem 1rem;
+	width: 100%;
+}
+
+.cv-article {
+	display: flex;
+	flex-direction: column;
+	gap: .85em;
+}
+
+
+.contact {
+	gap: .5em;
+	margin-inline: auto;
+	width: 100%;
+	place-content: center;
+	font-size: 90%;
+}
+
+.experience-item {
+	justify-content: space-between;
+}
+
+.experience-item.flex h3 {
+	line-height: normal;
+}
+
+.skill-category {
+	line-height: 1.45;
+	font-size: 80%;
+	font-weight: 600;
+	margin-inline-end: 2ch;
+	min-width: 10ch;
+}

@@ -1,90 +1,73 @@
-import os
-import shutil
-import sys
+from os import path, makedirs
+from shutil import copy
+from sys import exit
 
-import yaml
-from jinja2 import Environment
-from jinja2 import FileSystemLoader
-
-YAML_FILE_PATH = ".SmartCV.data.yml"
-template_dir, template_file = "templates", "resume_template.html"
-css_file = "style_resume_template.css"
-build_dir = "build"
-
-# ------------------------------------------------------------------------------
-
-yaml_data: any
-with open(YAML_FILE_PATH, "r") as base_data_file:
-    yaml_data = yaml.safe_load(base_data_file)
-yaml_output = yaml.dump(yaml_data, default_flow_style=False, sort_keys=False)
-
-# ------------------------------------------------------------------------------
+from jinja2 import Environment, FileSystemLoader, Template
+from yaml import safe_load
 
 
-class SmartCV:
-    """ """
+class SmartCVConfig:
+    def __init__(self, dir_root):
+        # Directory path where the script was executed.
+        self.dir_root = dir_root
 
-    def __init__(self, name):
-        self.name = name
+        # ----------------------------------------------------------------------
+        # User Config.
+        self.build_dir = "build"
+        self.css_file = "style_cv_template.css"
+        self.input_yaml = ".SmartCV.sample-data.yaml"
+        self.templates_dir = "templates"
+        self.template_file = "cv_template.html"
+        self.output_html = "cv.html"
+        self.output_pdf = "output_cv.pdf"
 
-    def generate_resume(self):
-        """ """
-        resume = []
-        resume.append(f"Name: {self.name}")
-
-        return "\n".join(resume)
-
-
-# ------------------------------------------------------------------------------
-
-
-def generate_resume(yaml_file, template_file, output_pdf):
-    """
-
-    :param yaml_file:
-    :param template_file:
-    :param output_pdf:
-
-    """
-    # --------------------------------------------------------------------------
-    # Load YAML data
-    with open(yaml_file, "r", encoding="utf-8") as file:
-        data = yaml.safe_load(file)
-
-    # --------------------------------------------------------------------------
-    # Load Jinja2 template
-    env = Environment(loader=FileSystemLoader(template_dir))
-    template = env.get_template("resume_template.html")
-
-    # --------------------------------------------------------------------------
-    # Render the template with YAML data
-    rendered_resume = template.render(data=data)
-    return rendered_resume
-
-    # --------------------------------------------------------------------------
-    # Generate PDF using WeasyPrint
-    # HTML(string=rendered_resume).write_pdf(output_pdf)
+        # ----------------------------------------------------------------------
+        # Automated Config.
+        self.path_dst_css_file = path.join(self.build_dir, self.css_file)
+        self.path_dst_cv_html = path.join(self.build_dir, self.output_html)
+        self.path_src_css_file = path.join(self.templates_dir, self.css_file)
+        self.path_src_template_file = path.join(self.dir_root,
+                                                self.template_file)
 
 
-def main():
-    """ """
-    dir_root = os.path.dirname(os.path.dirname(__file__))
-    template_file = os.path.join(dir_root, "resume_template.html")
+def generate_cv(config: SmartCVConfig) -> str:
+    # ----------------------------------------------------------------------
+    # Load YAML data.
+    with open(file=config.input_yaml, mode="r", encoding="utf-8") as file:
+        data = safe_load(file)
 
-    html_resume = generate_resume(".SmartCV.data.yml", template_file,
-                                  "output_resume.pdf")
+    # ----------------------------------------------------------------------
+    # Load Jinja2 template.
+    env = Environment(loader=FileSystemLoader(config.templates_dir))
+    template: Template = env.get_template(config.template_file)
 
-    # dir_build = os.path.join(dir_root, "build")
-    os.makedirs("build", exist_ok=True)
-    with open(os.path.join("build", "resume.html"), "w",
-              encoding="utf-8") as html_output_file:
-        print(html_resume)
-        html_output_file.write(html_resume)
-        shutil.copy(
-            src=os.path.join(template_dir, css_file),
-            dst=os.path.join(build_dir, css_file),
-        )
+    # ----------------------------------------------------------------------
+    # Render the template with YAML data.
+    rendered_cv: str = template.render(data=data)
+
+    # >> BACKLOG: Generate PDF using WeasyPrint.
+    # >> HTML(string=rendered_cv).write_pdf(output_pdf)
+    return rendered_cv
+
+
+def main() -> int:
+    # ----------------------------------------------------------------------
+    # Initialize configuration data class.
+    config = SmartCVConfig(dir_root=path.dirname(path.dirname(__file__)))
+
+    # ----------------------------------------------------------------------
+    # Generate CV content.
+    html_cv: str = generate_cv(config=config)
+
+    # ----------------------------------------------------------------------
+    # Write HTML output file and copy CSS file.
+    makedirs(config.build_dir, exist_ok=True)  # Ensure build directory exists.
+    with open(config.path_dst_cv_html, "w", encoding="utf-8") as dst_html_file:
+        dst_html_file.write(html_cv)
+        copy(src=config.path_src_css_file, dst=config.path_dst_css_file, )
+
+    return 0  # STATUS_OK.
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    exit(main())
