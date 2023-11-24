@@ -160,6 +160,10 @@ span {
 	font-size: .85rem;
 }
 
+div.date-period {
+    font-size: .85rem;
+}
+
 address {
     font-style: normal;
 }

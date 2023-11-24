@@ -37,7 +37,8 @@
             </address>
         </header>
         <!--            <hr>-->
-        <p class="hero-summary" aria-label="High-level summary">{{ data.summary }}</p>
+        <p class="hero-summary" aria-label="High-level summary">{{ data.summary
+            }}</p>
 
         <section>
             <h2>Experience</h2>
@@ -48,8 +49,17 @@
                         <h3>{{ exp.company }} <span aria-hidden="true"
                         > · </span> {{ exp.title }}
                         </h3>
-                        <!--   Use semantic <time>. Abstract dates to start and end date in yaml config file -->
-                        <span>{{ exp.dates }}</span>
+                        <div class="date-period flex">
+                            <time aria-label="start date"
+                            <!--date-time="{{ exp.date_start }}"-->
+                            >{{ exp.date_start }}
+                            </time>
+                            <span aria-hidden="true">–</span>
+                            <time aria-label="end date"
+                            <!--date-time="{{ exp.date_end }}"-->
+                            >{{ exp.date_end }}
+                            </time>
+                        </div>
                     </div>
                     <ul>
                         {% for resp in exp.responsibilities %}
@@ -114,7 +124,17 @@
                         <span aria-hidden="true">&nbsp;·&nbsp;</span>
                         {{ edu.degree }} in {{ edu.major }}
                     </h3>
-                    <span>{{ edu.dates }}</span>
+                    <div class="date-period flex">
+                        <time aria-label="start date"
+                        <!--date-time="{{ edu.date_start }}"-->
+                        >{{ edu.date_start }}
+                        </time>
+                        <span aria-hidden="true">–</span>
+                        <time aria-label="end date"
+                        <!--date-time="{{ edu.date_end }}"-->
+                        >{{ edu.date_end }}
+                        </time>
+                    </div>
                 </div>
                 {% endfor %}
             </div>
