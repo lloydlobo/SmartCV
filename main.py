@@ -39,6 +39,7 @@ def generate_cv(config: SmartCVConfig) -> str:
     """
 
     :param config: SmartCVConfig:
+    :param config: SmartCVConfig:
 
     """
     # ----------------------------------------------------------------------
