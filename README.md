@@ -9,7 +9,7 @@ Craft personalized resumes with `SmartCV` using `CSS` precision and on-the-fly
   editing CVs.
 - Ability to edit and style as one pleases. (Just the basics of `HTML` and `CSS`
   are required.)
-- Edit resume in any text-editor and watch changes in the browser.
+- Edit CV in any text-editor and watch changes in the browser.
   - [ ] TODO: Add hot-reloading for the `python` compilation script.
 
 ## Sample Preview
@@ -20,7 +20,7 @@ Craft personalized resumes with `SmartCV` using `CSS` precision and on-the-fly
 name: Jane Smith
 contact:
   email: janesmith@example.com
-  phone: (+987)-654-3210
+  phone: +1234567891
   address: Abbey Road
   website: https://example.com
 summary: >-
@@ -87,4 +87,4 @@ education:
 
 ### Output Resume
 
-![sample-resume_SmartCV_2023-11-23](https://github.com/lloydlobo/SmartCV/assets/76430758/a66c31c4-92f6-4ec6-8e81-e80d331b5efe)
+![SmartCV_example](https://github.com/lloydlobo/SmartCV/assets/76430758/e3ddfaff-3f08-482e-be84-0749b8cd2d13)
