@@ -1,8 +1,11 @@
-from os import makedirs, path
+from os import makedirs
+from os import path
 from shutil import copy
 from sys import exit
 
-from jinja2 import Environment, FileSystemLoader, Template
+from jinja2 import Environment
+from jinja2 import FileSystemLoader
+from jinja2 import Template
 from yaml import safe_load
 
 
