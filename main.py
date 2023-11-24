@@ -11,6 +11,7 @@ from yaml import safe_load
 
 class SmartCVConfig:
     """ """
+
     def __init__(self, dir_root):
         # Directory path where the script was executed.
         self.dir_root = dir_root
@@ -30,7 +31,8 @@ class SmartCVConfig:
         self.path_dst_css_file = path.join(self.build_dir, self.css_file)
         self.path_dst_cv_html = path.join(self.build_dir, self.output_html)
         self.path_src_css_file = path.join(self.templates_dir, self.css_file)
-        self.path_src_template_file = path.join(self.dir_root, self.template_file)
+        self.path_src_template_file = path.join(self.dir_root,
+                                                self.template_file)
 
 
 def generate_cv(config: SmartCVConfig) -> str:
