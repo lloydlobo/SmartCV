@@ -20,11 +20,11 @@ Craft personalized resumes with `SmartCV` using `CSS` precision and on-the-fly
 name: Jane Smith
 contact:
   email: janesmith@example.com
-  phone: (+987)-654-3210
+  phone: +1234567891
   address: Abbey Road
   website: https://example.com
 summary: >-
-  I enjoy creating meaningful programs and collaborating for quality results.
+  I enjoy creating meaningful programs and collaborating for quality results. 
   Eager to contribute my skills to an integrity-driven software environment.
 experience:
   - company: Amazon
