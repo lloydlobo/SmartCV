@@ -7,6 +7,7 @@ from yaml import safe_load
 
 
 class SmartCVConfig:
+    """ """
     def __init__(self, dir_root):
         # Directory path where the script was executed.
         self.dir_root = dir_root
@@ -30,6 +31,11 @@ class SmartCVConfig:
 
 
 def generate_cv(config: SmartCVConfig) -> str:
+    """
+
+    :param config: SmartCVConfig: 
+
+    """
     # ----------------------------------------------------------------------
     # Load YAML data.
     with open(file=config.input_yaml, mode="r", encoding="utf-8") as file:
@@ -50,6 +56,7 @@ def generate_cv(config: SmartCVConfig) -> str:
 
 
 def main() -> int:
+    """ """
     # ----------------------------------------------------------------------
     # Initialize configuration data class.
     config = SmartCVConfig(dir_root=path.dirname(path.dirname(__file__)))
