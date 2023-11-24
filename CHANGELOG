@@ -1,0 +1,45 @@
+===--------------------------------------------------------------------------===
+                             SmartCV Changelog
+===--------------------------------------------------------------------------===
+
+Version 2023-11-24
+- Refactor: Enhance readability, accessibility, and code consistency #4
+
+    Changes:
+    - Introduced a configuration data class to simplify path handling and
+      improve code consistency. This aids users in renaming source or
+      destination files and enhances overall readability and logic
+      understanding.
+    - Updated CSS styles and HTML templates for improved accessibility (a11y).
+      Maintained consistency by replacing any mentions of 'resume' with 'cv'
+      in file names or source code.
+
+    What:
+    - Refined the CSS style file.
+    - Utilized semantic HTML for the template.
+    - Implemented a11y ARIA labels, including decorative separators with
+      aria-hidden="true".
+    - Streamlined the Python compilation script with concise code and
+      user-readable comments.
+    - SmartCVConfig data class now manages all path, file, and directory names,
+      handling path joining for nested items.
+
+Version 2023-11-23
+- User Experience Enhancements #1
+
+    Changes:
+    - Conducted code cleanup to improve readability and provide users with
+      a better experience.
+    - Improved styling for easier reading, added more topics for better
+      coverage, optimized presentation, and documented changes in README with
+      images for clarity.
+    - Eliminated unnecessary assets and organized the project structure.
+
+    What:
+    - Enhanced readability through improved styling.
+    - Expanded content with additional topics for better coverage.
+    - Optimized presentation with updated encoding, added website field, and
+      improved spacing for a better look.
+    - Improved documentation by adding images to the README for clarity.
+    - Simplified and cleaned up the project structure by removing unnecessary
+      assets.

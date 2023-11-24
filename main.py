@@ -10,11 +10,12 @@ from yaml import safe_load
 
 
 class SmartCVConfig:
-    """ """
+    """
+    Configuration class for SmartCV.
+    """
 
     def __init__(self, dir_root):
-        # Directory path where the script was executed.
-        self.dir_root = dir_root
+        self.dir_root = dir_root  # Directory path where script is executed.
 
         # ----------------------------------------------------------------------
         # User Config.
@@ -37,12 +38,11 @@ class SmartCVConfig:
 
 def generate_cv(config: SmartCVConfig) -> str:
     """
+    Generate CV content based on the provided configuration.
 
-    :param config: SmartCVConfig:
-    :param config: SmartCVConfig:
-
+    :param config: SmartCVConfig: Configuration for SmartCV.
+    :return: str: Rendered CV content.
     """
-    # ----------------------------------------------------------------------
     # Load YAML data.
     with open(file=config.input_yaml, mode="r", encoding="utf-8") as file:
         data = safe_load(file)
@@ -52,22 +52,19 @@ def generate_cv(config: SmartCVConfig) -> str:
     env = Environment(loader=FileSystemLoader(config.templates_dir))
     template: Template = env.get_template(config.template_file)
 
-    # ----------------------------------------------------------------------
-    # Render the template with YAML data.
-    rendered_cv: str = template.render(data=data)
-
-    # >> BACKLOG: Generate PDF using WeasyPrint.
-    # >> HTML(string=rendered_cv).write_pdf(output_pdf)
-    return rendered_cv
+    # Render the template with YAML data and return it.
+    return template.render(data=data)
 
 
 def main() -> int:
-    """ """
-    # ----------------------------------------------------------------------
+    """
+    Main function to execute SmartCV generation.
+
+    :return: int: Status code (0 for success).
+    """
     # Initialize configuration data class.
     config = SmartCVConfig(dir_root=path.dirname(path.dirname(__file__)))
 
-    # ----------------------------------------------------------------------
     # Generate CV content.
     html_cv: str = generate_cv(config=config)
 
