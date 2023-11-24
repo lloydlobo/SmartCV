@@ -31,7 +31,8 @@ class SmartCVConfig:
         self.path_dst_css_file = path.join(self.build_dir, self.css_file)
         self.path_dst_cv_html = path.join(self.build_dir, self.output_html)
         self.path_src_css_file = path.join(self.templates_dir, self.css_file)
-        self.path_src_template_file = path.join(self.dir_root, self.template_file)
+        self.path_src_template_file = path.join(self.dir_root,
+                                                self.template_file)
 
 
 def generate_cv(config: SmartCVConfig) -> str:
