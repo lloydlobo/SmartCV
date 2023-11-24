@@ -87,4 +87,4 @@ education:
 
 ### Output Resume
 
-![sample-resume_SmartCV_2023-11-23](https://github.com/lloydlobo/SmartCV/assets/76430758/a66c31c4-92f6-4ec6-8e81-e80d331b5efe)
+![SmartCV_example](https://github.com/lloydlobo/SmartCV/assets/76430758/e3ddfaff-3f08-482e-be84-0749b8cd2d13)
