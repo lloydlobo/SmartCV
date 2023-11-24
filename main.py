@@ -26,8 +26,7 @@ class SmartCVConfig:
         self.path_dst_css_file = path.join(self.build_dir, self.css_file)
         self.path_dst_cv_html = path.join(self.build_dir, self.output_html)
         self.path_src_css_file = path.join(self.templates_dir, self.css_file)
-        self.path_src_template_file = path.join(self.dir_root,
-                                                self.template_file)
+        self.path_src_template_file = path.join(self.dir_root, self.template_file)
 
 
 def generate_cv(config: SmartCVConfig) -> str:
@@ -64,7 +63,10 @@ def main() -> int:
     makedirs(config.build_dir, exist_ok=True)  # Ensure build directory exists.
     with open(config.path_dst_cv_html, "w", encoding="utf-8") as dst_html_file:
         dst_html_file.write(html_cv)
-        copy(src=config.path_src_css_file, dst=config.path_dst_css_file, )
+        copy(
+            src=config.path_src_css_file,
+            dst=config.path_dst_css_file,
+        )
 
     return 0  # STATUS_OK.
 
